@@ -1,6 +1,6 @@
-package dataStructures;
+package singlyLinkedList;
 
-public class LinkedList {
+public class LinkedList implements iLinkedList {
 //  A singly linked list consist of a list of nodes and methods to operate on them.
 
     private Node head = null;
@@ -11,7 +11,7 @@ public class LinkedList {
     }
 
     //  Node class
-    private static class Node {
+    static class Node {
         public int element;
         public Node next;
 
@@ -22,7 +22,8 @@ public class LinkedList {
         }
     }
 
-    //  Inserts the specified element at the beginning of this list.
+
+    @Override
     public void addFirst(int e) {
         head = new Node(e, null);
         if (size == 0) {
@@ -31,53 +32,55 @@ public class LinkedList {
         size++;
     }
 
-    //  Appends the specified element to the end of this list.
-    public void addLast(int e) {
+        @Override
+    public void addLast(int e, Node next) {
         if (size == 0) {
             addFirst(e);
         } else {
-            tail.next = new Node(e, null);
+            tail.next = new Node(e, next);
             tail = tail.next;
             size++;
         }
     }
 
-    //    Appends the specified element to the end of this list.
-    public void add(int e) {
+    @Override
+    public void add(int e,Node next) {
         if (size != 0) {
-            addLast(e);
+            addLast(e, next);
         } else {
             addFirst(e);
         }
     }
 
-    //    Appends all of the elements in the specified collection to the end of this list,
-    //    in the order that they are returned by the specified collection's iterator
+    @Override
     public void addAll(int[] arr) {
-        for (int e : arr
-        ) {
-            add(e);
+        for (int e : arr) {
+            add(e,null);
         }
     }
 
+    @Override
     public int getSize() {
         return size;
     }
 
+    @Override
     public int getFirst() {
-        int e = 0;
+                int e = 0;
         if (head != null) {
             e = head.element;
         }
         return e;
     }
 
+    @Override
     public int getLast() {
         return tail.element;
     }
 
-    //    Returns the element at the specified position in this list.
+    @Override
     public int get(int index) {
+
         Node currNode = head;
         int e = 0;
         int i = 0;
@@ -95,6 +98,7 @@ public class LinkedList {
         return e;
     }
 
+    @Override
     public int indexOf(int e) {
         Node currNode = head;
         int i=0;
@@ -111,36 +115,25 @@ public class LinkedList {
         return -1;
     }
 
-    //       Removes all of the elements from this list.
+    @Override
     public void clear() {
         head = null;
         tail = null;
         size = 0;
     }
 
-    public void removeFirst(){
-        if (head != null){
+    @Override
+    public void removeFirst() {
+        if (head != null) {
             head = head.next;
             size--;
         }
-
-    }
-//public void removeLast(){
-//    if (tail != null){
-//        tail =
-//    }
-//}
-
-
-    //  Driver class
-    public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        int[] myarr = {1, 3, 4, 5};
-        list.addAll(myarr);
-        list.removeFirst();
-        System.out.println(list.getLast());
     }
 
+    @Override
+    public void removeLast() {
+//    remove the last element
+    }
 
 }
 
