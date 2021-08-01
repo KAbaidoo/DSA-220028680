@@ -7,7 +7,7 @@ public class LinkedList implements iLinkedList {
     private Node tail = null;
     private int size = 0;
 
-        LinkedList() {
+    LinkedList() {
     }
 
     //  Node class
@@ -25,31 +25,29 @@ public class LinkedList implements iLinkedList {
 
     @Override
     public void addFirst(int e) {
-            Node temp = head;
-
-        head = new Node(e, null);
-        head.next = temp;
+        Node temp = head;
+        head = new Node(e, temp);
         if (size == 0) {
             tail = head;
         }
         size++;
     }
 
-        @Override
-    public void addLast(int e, Node next) {
+    @Override
+    public void addLast(int e) {
         if (size == 0) {
             addFirst(e);
         } else {
-            tail.next = new Node(e, next);
+            tail.next = new Node(e, null);
             tail = tail.next;
             size++;
         }
     }
 
     @Override
-    public void add(int e,Node next) {
+    public void add(int e) {
         if (size != 0) {
-            addLast(e, next);
+            addLast(e);
         } else {
             addFirst(e);
         }
@@ -58,7 +56,7 @@ public class LinkedList implements iLinkedList {
     @Override
     public void addAll(int[] arr) {
         for (int e : arr) {
-            add(e,null);
+            add(e);
         }
     }
 
@@ -69,7 +67,7 @@ public class LinkedList implements iLinkedList {
 
     @Override
     public int getFirst() {
-                int e = 0;
+        int e = 0;
         if (head != null) {
             e = head.element;
         }
@@ -104,7 +102,7 @@ public class LinkedList implements iLinkedList {
     @Override
     public int indexOf(int e) {
         Node currNode = head;
-        int i=0;
+        int i = 0;
         if (currNode.element == e) return i;
 
         while (currNode.next != null) {
@@ -112,7 +110,8 @@ public class LinkedList implements iLinkedList {
             currNode = currNode.next;
             if (currNode.element == e) {
                 return i;
-            };
+            }
+            ;
 
         }
         return -1;
@@ -137,15 +136,15 @@ public class LinkedList implements iLinkedList {
 
     @Override
     public int removeLast() {
-        int temp = get(getSize()-1);
+        int temp = get(getSize() - 1);
         int i = 0;
-        Node curreNode  = head;
-        while (i != getSize()-2) {
+        Node curreNode = head;
+        while (i != getSize() - 2) {
             curreNode = curreNode.next;
             i++;
         }
         tail = curreNode;
-        tail.next  = null;
+        tail.next = null;
         size--;
 
         return temp;
