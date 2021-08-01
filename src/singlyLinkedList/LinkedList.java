@@ -123,16 +123,29 @@ public class LinkedList implements iLinkedList {
     }
 
     @Override
-    public void removeFirst() {
+    public int removeFirst() {
+        int temp = get(0);
         if (head != null) {
             head = head.next;
             size--;
         }
+        return temp;
     }
 
     @Override
-    public void removeLast() {
-//    remove the last element
+    public int removeLast() {
+        int temp = get(getSize()-1);
+        int i = 0;
+        Node curreNode  = head;
+        while (i != getSize()-2) {
+            curreNode = curreNode.next;
+            i++;
+        }
+        tail = curreNode;
+        tail.next  = null;
+        size--;
+
+        return temp;
     }
 
 }

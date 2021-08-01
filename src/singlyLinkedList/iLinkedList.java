@@ -76,11 +76,11 @@ public interface iLinkedList {
     /**
      *  Removes and returns the first element from this list.
      */
-     void removeFirst();
+     int removeFirst();
 
     /**
      *  Removes and returns the first element from this list.
      */
-     void removeLast();
+     int removeLast();
 
 }
