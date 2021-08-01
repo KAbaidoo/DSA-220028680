@@ -25,7 +25,10 @@ public class LinkedList implements iLinkedList {
 
     @Override
     public void addFirst(int e) {
+            Node temp = head;
+
         head = new Node(e, null);
+        head.next = temp;
         if (size == 0) {
             tail = head;
         }
