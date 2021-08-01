@@ -7,7 +7,7 @@ public class LinkedList implements iLinkedList {
     private Node tail = null;
     private int size = 0;
 
-    public LinkedList() {
+        LinkedList() {
     }
 
     //  Node class
@@ -16,7 +16,7 @@ public class LinkedList implements iLinkedList {
         public Node next;
 
         //      constructor for creating new nodes
-        private Node(int element, Node next) {
+        Node(int element, Node next) {
             this.element = element;
             this.next = next;
         }

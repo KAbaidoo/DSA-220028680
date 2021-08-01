@@ -24,6 +24,11 @@ public class Driver {
         list.removeFirst();
         print(list);
 
+        list.clear();
+        print(list);
+
+        list.add(2,new LinkedList.Node(3,new LinkedList.Node(4,new LinkedList.Node(5,null))));
+        print(list);
 
     }
 }
