@@ -12,17 +12,16 @@ public interface iLinkedList {
      * Appends the specified element to the end of this list.
      *
      * @param e    The element to be appended
-     * @param next Next node of list
+
      */
-     void addLast(int e, LinkedList.Node next);
+     void addLast(int e);
 
     /**
      * Appends the specified element to the end of this list.
      *
      * @param e    The element to be appended
-     * @param next Next node of list
      */
-     void add(int e, LinkedList.Node next);
+     void add(int e);
 
     /**
      *  Inserts all of the elements in the specified collection into this list, starting at the specified position.

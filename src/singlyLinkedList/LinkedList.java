@@ -83,7 +83,7 @@ public class LinkedList implements iLinkedList {
     public int get(int index) {
 
         Node currNode = head;
-        int e = 0;
+        int e;
         int i = 0;
         if (index == 0) {
             getFirst();
@@ -92,7 +92,6 @@ public class LinkedList implements iLinkedList {
                 i++;
                 currNode = currNode.next;
                 if (index == i) break;
-
             }
         }
         e = currNode.element;
@@ -111,8 +110,6 @@ public class LinkedList implements iLinkedList {
             if (currNode.element == e) {
                 return i;
             }
-            ;
-
         }
         return -1;
     }
