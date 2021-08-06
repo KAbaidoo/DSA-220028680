@@ -18,13 +18,13 @@ public class Main {
         print(queue);
         print("Order of addition "+Arrays.toString(added_elements));
 
-//         repetitive removal
-        int[] removed = new int[queue.getSize()];
-        for(int i = 0; i < queue.getSize(); i++){
-            int element = queue.dequeue();
-            removed[i] = element;
-        }
-        print(Arrays.toString(removed));
+////         repetitive removal
+//        int[] removed = new int[queue.getSize()];
+//        for(int i = 0; i < queue.getSize(); i++){
+//            int element = queue.dequeue();
+//            removed[i] = element;
+//        }
+//        print(Arrays.toString(removed));
 
         /**
          * Print the elements of the queue in the right order
