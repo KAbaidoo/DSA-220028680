@@ -41,9 +41,7 @@ public class Main {
             queue.dequeue();
         }
         print("elements of the queue "+Arrays.toString(elements));
-
     }
-
 
     public static void print(Object o){
         System.out.println(o.toString());
