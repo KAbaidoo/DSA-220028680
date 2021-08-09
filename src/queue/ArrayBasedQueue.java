@@ -12,7 +12,7 @@ public class ArrayBasedQueue<E> implements Queue<E> {
 
     public ArrayBasedQueue(int queue_size) {
         this.size = 0;
-        this.head_index = 0;
+        this.head_index = 5;
         this.queue = (E[]) new Object[queue_size];
     }
 
@@ -26,6 +26,7 @@ public class ArrayBasedQueue<E> implements Queue<E> {
     public E dequeue() throws Exception {
         checkQueue();
         E out = queue[head_index];
+        queue[head_index]= null;
         head_index = (head_index + 1) % queue.length;
         size--;
         return out;

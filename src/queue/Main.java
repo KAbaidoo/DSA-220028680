@@ -34,11 +34,10 @@ public class Main {
          */
         //Put your codes here
 
-        int[] elements = new int[queue.getSize()];
+        int[] elements = new int[queue_size];
 
         for(int i = 0; i < elements.length; i++){
-            elements[i] = queue.first();
-            queue.dequeue();
+            elements[i] = queue.dequeue();
         }
         print("elements of the queue "+Arrays.toString(elements));
     }
