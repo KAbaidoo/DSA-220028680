@@ -7,11 +7,11 @@ public class LinkedList implements iLinkedList {
     private Node tail = null;
     private int size = 0;
 
-    LinkedList() {
+    public LinkedList() {
     }
 
     //  Node class
-    static class Node {
+    public static class Node {
         public int element;
         public Node next;
 
@@ -42,6 +42,11 @@ public class LinkedList implements iLinkedList {
             tail = tail.next;
             size++;
         }
+    }
+
+    @Override
+    public boolean isEmpty() {
+            return size == 0;
     }
 
     @Override

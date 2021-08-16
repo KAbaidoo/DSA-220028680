@@ -2,7 +2,7 @@ package singlyLinkedList;
 
 public class Driver {
 
-    private static void print(LinkedList list){
+    public static void print(LinkedList list){
         int data;
         System.out.print("List items: ");
         for (int i = 0; i < list.getSize(); i++) {

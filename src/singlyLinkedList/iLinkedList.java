@@ -16,6 +16,8 @@ public interface iLinkedList {
      */
      void addLast(int e);
 
+     boolean isEmpty();
+
     /**
      * Appends the specified element to the end of this list.
      *
