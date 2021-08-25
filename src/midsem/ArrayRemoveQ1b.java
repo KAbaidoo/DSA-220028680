@@ -5,18 +5,18 @@ import java.util.Arrays;
 public class ArrayRemoveQ1b {
 
     public static void main(String[] args) {
-        int [] arr = {1,4,3,5};
+        int[] arr = {1, 4, 3, 5, 2, 1, 9, 4};
         removeRandom(arr);
     }
 
-    public static void removeRandom(int[]arr){
+    public static void removeRandom(int[] arr) {
         if (arr.length == 0) return;
         int numEntries = arr.length;
         // Print the original array
         System.out.println("Input Array: " + Arrays.toString(arr));
-
+//        System.out.println();
         // the index at which the element in the array is to be removed
-        int random_index = (int)(Math.random()*numEntries);
+        int random_index = (int) (Math.random() * numEntries);
 
         // display index
         System.out.println("Element to be removed at index: " + random_index);
@@ -45,6 +45,7 @@ public class ArrayRemoveQ1b {
 
         // Print the copied proxy array
         System.out.println("Array after removal operation: " + Arrays.toString(proxyArray));
+        System.out.println();
 
         removeRandom(proxyArray);
 
